@@ -50,6 +50,12 @@ namespace Vidly.Controllers
         }
 
         // kreiranje akcije za custom route
+        // https://localhost:44367/Movies/Released/2015/12
+        // sada smo enablali attribute routing pa mozemo dodati [Route]
+        // bacit oko na attribute routing constraints
+        // googleat: ASP.NET MVC Attribute Route Constraints
+
+            [Route("Movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
