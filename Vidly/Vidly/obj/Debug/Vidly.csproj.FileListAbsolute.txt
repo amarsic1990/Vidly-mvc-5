@@ -113,3 +113,5 @@ C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.pdb
 C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.Initialmodel.resources
 C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources

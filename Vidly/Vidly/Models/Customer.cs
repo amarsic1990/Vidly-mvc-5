@@ -9,5 +9,13 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsSubscribedToNewsletter { get; set; }
+
+        // ovo je navigation property jel nam dozvoljava da idemo od jednog type-a do drugog
+        // navigation property su korisni kada zelimo loadati objekt i njegov povezani objekt iz baze
+        public MembershipType MembershipType { get; set; }
+
+        // EF zna da je ovo FOREIGN KEY
+        public byte MembershipTypeId { get; set; }
     }
 }
