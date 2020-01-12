@@ -13,6 +13,14 @@ namespace Vidly
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // dodavanje custom route: dodajemo u route configu prije CUSTOM ROUTE
+            // ovde je ordering vazan mormao ih definirati od najspecifičnijih prema generičkim
+            routes.MapRoute(
+                name: "MoviesbyReleaseDate",
+                url: "Movies/released/{year}/{month}",
+                defaults: new {controller = "Movies", action = "ByReleaseDate" },
+                new { year = @"\d{4}", month = @"\d{2}"});
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
