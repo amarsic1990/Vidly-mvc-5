@@ -18,8 +18,11 @@ namespace Vidly.Models
         }
     }
 
+    // DbContext je prolaz do baze.. db context ima dbsetove koji su tablice u bazi.... s LINQom queramo setove
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Customer> Customers { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

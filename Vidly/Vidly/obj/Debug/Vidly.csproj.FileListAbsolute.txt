@@ -111,3 +111,5 @@ C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cach
 C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.pdb
+C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.Initialmodel.resources
+C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
