@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -15,13 +16,29 @@ namespace Vidly.Controllers
         {
 
             var movie = new Movie() { Name = "Shrek!" };
-            //return View(movie);
+
+            var customers = new List<Customer>()
+            {
+                new Customer {Name = "Customer 1"},
+                new Customer {Name = "Customer 2"}
+            };
+
+            var viewModel = new RandomMovieViewModel()
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+
+            return View(viewModel);
+
+
             //return Content("Hello World!");
             //return HttpNotFound();
             //return new EmptyResult();
 
             // katkad kada redirectamo na akciju moramo passati argumente target akciji.... to radimo s anonimus objektom kao 3 argumentom
-            return RedirectToAction("Index", "Home", new { page = 1, sortby = "Name" });
+            // return RedirectToAction("Index", "Home", new { page = 1, sortby = "Name" });
         }
 
         // action parametri su inputi za akcije... mogu biti u URL, upitu ili u oblku podatka (id = 1)
@@ -34,6 +51,7 @@ namespace Vidly.Controllers
 
         // da bi parametar napravili opcionalnim moramo ga napraviti NULLABILNIM (za to stavljamo upitnik kraj data type-a)
         // STRING je sam po sebi NULLABILAN 
+        // kada vracamo iz controllera koristiti view model to jest vratiti objekt ili view dictionary da vratimo key value parove
         // https://localhost:44367/Movies?pageindex=33&sortby=kkkkkkk
         public ActionResult Index(int? pageIndex, string sortBy)
         {
