@@ -116,3 +116,4 @@ C:\GitRepos\Vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cach
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipType.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
