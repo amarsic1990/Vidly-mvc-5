@@ -23,6 +23,9 @@ namespace Vidly.Models
         // EF zna da je ovo FOREIGN KEY
         public byte MembershipTypeId { get; set; }
 
+        // sta ce nam se pokazivat u viewu za ovaj atribut
+        // koristiti ovo i helper metode
+        [Display(Name = "Date of Birth")]
         public DateTime? DateOfBirth { get; set; }
 
     }
