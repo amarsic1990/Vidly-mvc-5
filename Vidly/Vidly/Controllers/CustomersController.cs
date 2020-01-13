@@ -69,6 +69,14 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
+        // ako su akcije modificiranje podataka ne bi trebale biti dostupne HTTPGETu
+        // mvc automatski mapira REQUEST PODATKE objektu viewModel-u ili kako smo vec dali ime parametru
+        [HttpPost]
+        public ActionResult Create(NewCustomerViewModel viewModel)
+        {
+            return View();
+        }
+
         private IEnumerable<Customer> GetCustomers()
         {
             return new List<Customer>
