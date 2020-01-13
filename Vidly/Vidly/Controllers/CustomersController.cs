@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using System.Data.Entity;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -38,6 +39,7 @@ namespace Vidly.Controllers
         // to list metoda I singe or default metoda odmah izvrsavaju upit...
         public ActionResult Index()
         {
+
             var customers = _context.Customers.Include(c => c.MembershipType).ToList(); ;
             return View(customers);
         }
@@ -56,7 +58,15 @@ namespace Vidly.Controllers
         //ta akcija mora ukljicivati VIEW koji sadrzi tu formu...
         public ActionResult New()
         {
-            return View();
+            // ovde cemo morati kreirati view model
+            var membershipTypes = _context.MembershipTypes.ToList();
+
+            // samo typove vracamo u viewu a odabrani type i customerove podatke cemo valjda priko ovog viewa spremit u bazu...
+            var viewModel = new NewCustomerViewModel()
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View(viewModel);
         }
 
         private IEnumerable<Customer> GetCustomers()

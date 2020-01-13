@@ -18,9 +18,13 @@ namespace Vidly.Models
 
         // ovo je navigation property jel nam dozvoljava da idemo od jednog type-a do drugog
         // navigation property su korisni kada zelimo loadati objekt i njegov povezani objekt iz baze
+
+            
         public MembershipType MembershipType { get; set; }
 
         // EF zna da je ovo FOREIGN KEY
+
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
         // sta ce nam se pokazivat u viewu za ovaj atribut
