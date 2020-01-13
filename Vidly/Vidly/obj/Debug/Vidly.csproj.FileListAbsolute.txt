@@ -117,3 +117,5 @@ C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedTo
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipType.resources
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameToMembershipType.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateNameInMembershipTypes.resources

@@ -22,5 +22,6 @@ namespace Vidly.Models
 
         // EF zna da je ovo FOREIGN KEY
         public byte MembershipTypeId { get; set; }
+
     }
 }

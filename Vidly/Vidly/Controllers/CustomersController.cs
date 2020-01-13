@@ -35,7 +35,7 @@ namespace Vidly.Controllers
 
 
         // GET: Customers
-        // to list I singe or default metode odmag izvrsavaju upit...
+        // to list metoda I singe or default metoda odmah izvrsavaju upit...
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList(); ;
