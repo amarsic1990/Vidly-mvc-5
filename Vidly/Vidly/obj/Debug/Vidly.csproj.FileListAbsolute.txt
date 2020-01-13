@@ -120,3 +120,14 @@ C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsT
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameToMembershipType.resources
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateNameInMembershipTypes.resources
 C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDateOfBirthToCustomer.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMovieTable.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddReleaseDateToMovie.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDateAddedToMovie.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.NumberInStock.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovieTable.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreTable.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreIdToMovies.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenreTable.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreToMovie.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.test.resources
+C:\GitRepos\vidly-mvc-5\Vidly\Vidly\obj\Debug\Vidly.Migrations.test1.resources
