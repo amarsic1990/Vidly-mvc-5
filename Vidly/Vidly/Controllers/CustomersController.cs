@@ -72,9 +72,16 @@ namespace Vidly.Controllers
         // ako su akcije modificiranje podataka ne bi trebale biti dostupne HTTPGETu
         // mvc automatski mapira REQUEST PODATKE objektu viewModel-u ili kako smo vec dali ime parametru
         [HttpPost]
-        public ActionResult Create(NewCustomerViewModel viewModel)
+        public ActionResult Create(Customer customer)
         {
-            return View();
+            // da bi dodali kupca u bazu prvo ga moramo dodati u DbContext
+            // ovo u DbContextu je samo u memoriji
+            _context.Customers.Add(customer);
+
+            // da bi spremili promjene zovemo save changes
+            // ovo je u transakciji ili će sve proć ili će puknit
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Customers");
         }
 
         private IEnumerable<Customer> GetCustomers()
