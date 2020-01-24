@@ -62,11 +62,11 @@ namespace Vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
 
             // samo typove vracamo u viewu a odabrani type i customerove podatke cemo valjda priko ovog viewa spremit u bazu...
-            var viewModel = new NewCustomerViewModel()
+            var viewModel = new CustomerFormViewModel()
             {
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         // ako su akcije modificiranje podataka ne bi trebale biti dostupne HTTPGETu
@@ -82,6 +82,26 @@ namespace Vidly.Controllers
             // ovo je u transakciji ili će sve proć ili će puknit
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            // view new vraca model: "NewCustomerViewModel"
+            var viewmodel = new CustomerFormViewModel()
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            // prije smo vracali view new sada moramo overwriteati taj view
+            return View("CustomerForm", viewmodel);
+            
         }
 
         private IEnumerable<Customer> GetCustomers()

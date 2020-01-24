@@ -1,0 +1,53 @@
+﻿@model Vidly.ViewModels.CustomerFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@*Ime akcije i controllera
+    forma je kao kontenjer u koji mozemo dodati dosta elemenata
+    HTML beginform renderira samo <form> tag na ne zatvara ga... za zatvoriti ga moramo koristiti using
+    ova metoda vraca dispose-able objekt
+    svaki element stavljamo u div class="form-group""
+    svakom inputu dajemo "form-control" klasu*@
+
+
+@using (Html.BeginForm("Create", "Customers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.DateOfBirth)
+        @Html.TextBoxFor(m => m.Customer.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @* drop down lista je za membershipTypeID to je prvi argument,
+         drugi argument je lista ITEMS-a za DROP DOWN listu to nam je SELECT LIST
+        u njoj nam je prvi argument LISTA ITEMSa
+         2 argument je ime PROPERTYa u MembershipType klasi koja sadrzi VRIJEDNOST za svaki item
+         3 argument je property koji sadrzi tekst za svaki item
+
+         3 ARGUMENT U DROPDOWN LISTI ke stvar koja ce se  pokazivati na vrhu drop down liste mozemo tu staviti prazne navodnike ili zapisati nesta
+        *@
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select subscriotion", new { @class = "form-control" })
+
+
+        <div class="checkbox">
+            <label>
+                @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribed to Newsletter?
+            </label>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
+
+    </div>
+}

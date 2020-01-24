@@ -25,7 +25,7 @@
                 @foreach (var customer in Model)
                 {
                     <tr>
-                        <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+                        <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
                         <td>@customer.MembershipType.Name</td> @*ovo ce puknit jer se ne loadaju povezani objekti vec samo customer*@
 
                         @*kada loadamo CUSTOMERS i njegove povezane OBJEKTE --> EAGER LOADING
