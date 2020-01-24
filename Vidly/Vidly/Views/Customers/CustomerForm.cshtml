@@ -14,7 +14,7 @@
     svakom inputu dajemo "form-control" klasu*@
 
 
-@using (Html.BeginForm("Create", "Customers"))
+@using (Html.BeginForm("Save", "Customers"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
@@ -45,7 +45,8 @@
             </label>
         </div>
 
-
+        @*Hidden field*@
+        @Html.HiddenFor(m=>m.Customer.Id)
         <button type="submit" class="btn btn-primary">Save</button>
 
 

@@ -72,12 +72,28 @@ namespace Vidly.Controllers
         // ako su akcije modificiranje podataka ne bi trebale biti dostupne HTTPGETu
         // mvc automatski mapira REQUEST PODATKE objektu viewModel-u ili kako smo vec dali ime parametru
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
             // da bi dodali kupca u bazu prvo ga moramo dodati u DbContext
             // ovo u DbContextu je samo u memoriji
-            _context.Customers.Add(customer);
+            // ako je customer id = 0 to je novi customer dodajemo ga u bazu
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            // u suprotnom radimo update na bazi
+            // da bi update-ali entitet moramo ga vratiti iz baze prvo
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
 
+                // ne koristiti tryupdatemodel
+                // AutoMapper ka jednostavnije ali ne koristiti ovde.... ovo mozemo s DTO koristiti
+                customerInDb.Name = customer.Name;
+                customerInDb.DateOfBirth = customer.DateOfBirth;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            }
             // da bi spremili promjene zovemo save changes
             // ovo je u transakciji ili će sve proć ili će puknit
             _context.SaveChanges();
